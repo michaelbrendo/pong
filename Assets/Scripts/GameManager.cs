@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Transform playerPaddle;
     public Transform enemyPaddle;
+    public Ball ballMovement;
 
     void Start()
     {
@@ -17,5 +18,7 @@ public class GameManager : MonoBehaviour
         // Initial paddle position
         playerPaddle.position = new Vector3(-7f, 0f, 0f);
         enemyPaddle.position = new Vector3(7f, 0f, 0f);
+
+        ballMovement.ResetBall();
     }
 }
