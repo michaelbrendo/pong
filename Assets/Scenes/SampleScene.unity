@@ -811,7 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPaddle: {fileID: 766444795}
   enemyPaddle: {fileID: 1021844418}
-  ballMoviment: {fileID: 848414808}
+  ballMovement: {fileID: 848414808}
 --- !u!4 &882138966
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    private Vector2 startingVelocity = new Vector2(5f, 0f);
+    private Vector2 startingVelocity = new Vector2(7f, 0f);
 
     public void ResetBall()
     {
