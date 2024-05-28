@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-
     private Rigidbody2D rb;
-    private Vector2 startingVelocity = new Vector2(7f, 0f);
+    private Vector2 startingVelocity = new Vector2(-7f, 7f);
+    public GameManager gameManager;
 
     public void ResetBall()
     {
@@ -19,17 +17,29 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall"))
         {
             Vector2 newVelocity = rb.velocity;
 
-            newVelocity.y = - newVelocity.y;
+            newVelocity.y = -newVelocity.y;
             rb.velocity = newVelocity;
         }
 
-        if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
             rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
+        }
+
+        if (collision.gameObject.CompareTag("WallPlayer"))
+        {
+            gameManager.ScoreEnemy();
+            ResetBall();
+        }
+
+        if (collision.gameObject.CompareTag("WallEnemy"))
+        {
+            gameManager.ScorePlayer();
+            ResetBall();
         }
     }
 }
