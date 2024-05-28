@@ -350,6 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4bf2590d5124b4cb55fae150a79012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPaddle: {fileID: 766444795}
+  enemyPaddle: {fileID: 1021844418}
 --- !u!4 &882138966
 Transform:
   m_ObjectHideFlags: 0

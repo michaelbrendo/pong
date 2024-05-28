@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform playerPaddle;
+    public Transform enemyPaddle;
+
     void Start()
     {
-        
+        ResetGame();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetGame()
     {
-        
+        // Initial paddle position
+        playerPaddle.position = new Vector3(-7f, 0f, 0f);
+        enemyPaddle.position = new Vector3(7f, 0f, 0f);
     }
 }
