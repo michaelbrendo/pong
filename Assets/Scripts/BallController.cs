@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
             rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
+            rb.velocity *= 1.1f;
         }
 
         if (collision.gameObject.CompareTag("WallPlayer"))
