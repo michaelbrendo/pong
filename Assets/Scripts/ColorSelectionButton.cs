@@ -32,16 +32,10 @@ public class ColorSelectionButton : MonoBehaviour
 
     private void UpdatePaddleColors()
     {
-        foreach (var player in FindObjectsOfType<PlayerController>())
+        var enemyController = FindObjectOfType<EnemyController>();
+        if (enemyController != null)
         {
-            if (player.isPlayer)
-            {
-                player.spriteRenderer.color = SaveController.Instance.colorPlayer;
-            }
-            else
-            {
-                player.spriteRenderer.color = SaveController.Instance.colorEnemy;
-            }
+            enemyController.UpdatePaddleColors();
         }
     }
 

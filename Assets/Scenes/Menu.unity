@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiButton: {fileID: 237727564}
   paddleReference: {fileID: 1676266099}
-  isColorPlayer: 1
+  isColorPlayer: 0
 --- !u!114 &237727564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiButton: {fileID: 1014750949}
   paddleReference: {fileID: 1676266099}
-  isColorPlayer: 1
+  isColorPlayer: 0
 --- !u!114 &1014750949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiButton: {fileID: 1875081762}
   paddleReference: {fileID: 1676266099}
-  isColorPlayer: 1
+  isColorPlayer: 0
 --- !u!114 &1875081762
 MonoBehaviour:
   m_ObjectHideFlags: 0
