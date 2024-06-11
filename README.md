@@ -31,6 +31,7 @@ The objective is simple: score points by getting the ball past the opponent's pa
 
 ## 📂 Project Structure
 
+```
 Pong Game
 ├── Assets
 │ ├── Scripts
@@ -44,7 +45,7 @@ Pong Game
 │ ├── PlayerPaddle.prefab
 │ ├── EnemyPaddle.prefab
 │ └── Ball.prefab
-
+```
 
 - **Scripts**
   - `EnemyController.cs`: Controls the AI paddle.
