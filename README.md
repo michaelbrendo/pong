@@ -1,4 +1,7 @@
 ﻿# 🎮 Pong Game
+<p align="center">
+    <img src="Assets/Arts/PONG.png" width="300">
+</p>
 
 ## 📖 Overview
 
