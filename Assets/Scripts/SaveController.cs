@@ -31,14 +31,15 @@ public class SaveController : MonoBehaviour
 
     private void Awake()
     {
-        //Check if just one istance exist 
-        if ( _instance != null && _instance != null) 
+        //Check if just one istance exists 
+        if ( _instance != null && _instance != this) 
         {
             Destroy(this.gameObject);
             return;
         }
 
-        //Keep the sigleton alive in betwen  scene
+        //Keep the singleton alive between scenes
+        _instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
 

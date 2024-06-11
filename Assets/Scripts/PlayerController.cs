@@ -3,23 +3,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speased = 7f;
-
     public string movementAxisName = "Vertical";
-
     public bool isPlayer = true;
     public SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        if (isPlayer)
-        {
-            spriteRenderer.color = SaveController.Instance.colorPlayer;
-        }            
-        else
-        {
-            spriteRenderer.color = SaveController.Instance.colorEnemy;
-        }
-            
+        UpdatePaddleColor();
     }
 
     void Update()
@@ -35,5 +25,17 @@ public class PlayerController : MonoBehaviour
 
         //update position
         transform.position = newPosition;
+    }
+
+    public void UpdatePaddleColor()
+    {
+        if (isPlayer)
+        {
+            spriteRenderer.color = SaveController.Instance.colorPlayer;
+        }
+        else
+        {
+            spriteRenderer.color = SaveController.Instance.colorEnemy;
+        }
     }
 }

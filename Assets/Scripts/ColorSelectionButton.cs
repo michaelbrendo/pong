@@ -12,7 +12,9 @@ public class ColorSelectionButton : MonoBehaviour
 
     public void OnButtonClick()
     {
-        paddleReference.color = uiButton.colors.normalColor;
+        //paddleReference.color = uiButton.colors.normalColor;
+        Color selectedColor = uiButton.GetComponent<Image>().color;
+        paddleReference.color = selectedColor;
 
         if (isColorPlayer)
         {
@@ -23,6 +25,24 @@ public class ColorSelectionButton : MonoBehaviour
             SaveController.Instance.colorEnemy = paddleReference.color;
         }
 
+        // Update paddle colors immediately
+        UpdatePaddleColors();
+
+    }
+
+    private void UpdatePaddleColors()
+    {
+        foreach (var player in FindObjectsOfType<PlayerController>())
+        {
+            if (player.isPlayer)
+            {
+                player.spriteRenderer.color = SaveController.Instance.colorPlayer;
+            }
+            else
+            {
+                player.spriteRenderer.color = SaveController.Instance.colorEnemy;
+            }
+        }
     }
 
 }
