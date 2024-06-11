@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textPointsEnemy;
 
     public int winPoints = 7;
+
+    public GameObject screenEndGame;
 
     void Start()
     {
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
 
         textPointsPlayer.text = playerScore.ToString();
         textPointsEnemy.text = enemyScore.ToString();
+
+        screenEndGame.SetActive(false);
     }
 
     public void ScorePlayer()
@@ -50,13 +55,25 @@ public class GameManager : MonoBehaviour
         textPointsEnemy.text = enemyScore.ToString();
         CheckWin();
     }
-    
+
     public void CheckWin()
     {
         if (playerScore >= winPoints || enemyScore >= winPoints)
         {
-            ResetGame();
+            //ResetGame();
+            EndGame();
         }
+    }
+
+    public void EndGame()
+    {
+        screenEndGame.SetActive(true);
+        Invoke("LoadMenu", 2f);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 
 }
