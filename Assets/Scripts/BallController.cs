@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 startingVelocity = new Vector2(-7f, 7f);
     public GameManager gameManager;
+    public ParticleSystem splashEffect;
 
     public void ResetBall()
     {
@@ -29,6 +30,9 @@ public class Ball : MonoBehaviour
         {
             rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
             rb.velocity *= 1.1f;
+
+            splashEffect.transform.position = collision.contacts[0].point;
+            splashEffect.Play();
         }
 
         if (collision.gameObject.CompareTag("WallPlayer"))
@@ -43,4 +47,5 @@ public class Ball : MonoBehaviour
             ResetBall();
         }
     }
+
 }
